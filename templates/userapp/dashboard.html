@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Clouding</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" integrity="sha384-<hash>" crossorigin="anonymous" onerror="this.onerror=null;this.href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css';"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <style>
+        h3 {
+            color: red;
+            font-size: 25px;
+        }
+        #box1, #box2 {
+            display: inline-block;
+        }
+        #navbar{
+            overflow:hidden;
+            position:fixed;
+            top:0;
+            width:100%;
+            z-index:300;
+            
+        }
+         footer {
+        background-color: #222;
+        color: #ccc;
+        padding: 20px 0;
+    }
+    footer a {
+        color: #ccc;
+        text-decoration: none;
+    }
+    footer a:hover {
+        color: #fff;
+    }
+    .footer-heading {
+        color: #fff;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    </style>
+</head>
+<body>
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="/home"><strong>File Clouding</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/home" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/userfiles">My Files</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">ContactUs</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#">Action 1</a>
+                        <a class="dropdown-item" href="#">Action 2</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid min-vh-100 d-flex align-items-center">
+        <div class="row w-100">
+          <!-- Left Text Section -->
+          <div class="col-lg-6 px-5 py-5">
+            <h2 class="fw-bold mb-3">Access your files from multiple devices</h2>
+            <p class="fs-5">File Clouding offers one central hub for online file storage, 
+              <a href="{% url 'userfiles' %}">file sharing</a>, and syncing. Whether you’re at work or on the road, 
+              your files are <a href="{% url 'userfiles' %}">synced across your devices</a> and accessible in real time.</p>
+            <p class="fs-5">Access your File cloud account through your browser.</p>
+            <button class="btn btn-dark mt-4 px-4 py-2">
+              Save files effortlessly →
+            </button>
+          </div>
+    
+          <!-- Right Visual Mockup Section -->
+          <div class="col-lg-6 d-flex justify-content-center align-items-center">
+            <div class="position-relative">
+              <img src="{% static 'images/img3.jpg' %}" alt="filecloud UI" class="img-fluid rounded shadow">
+            </div>
+          </div>
+        </div>
+      </div>
+   
+      <div id="carousel1" class="carousel slide" data-bs-ride="carousel"  >
+          <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <img src="{% static 'images/star.jpg'%}" class="d-block w-100" alt="Slide 1"style="width:100%; height:400px;">
+              </div>
+              <div class="carousel-item">
+                  <img src="{%static 'images/cloud-3.webp'%}" class="d-block w-100" alt="Slide 2"style="width:100%; height:400px;">
+              </div>
+              <div class="carousel-item">
+                  <img src="{% static 'images/bg-img.jpg'%}" class="d-block w-100" alt="Slide 3"style="width:100%; height:400px;">
+              </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+      
+   
+    <footer>
+    <div class="container-fluid bg-dark text-white py-5">
+        <div class="container">
+            <div class="row row-cols-2 row-cols-md-6 g-4">
+                <div class="col">
+                    <div class="footer-heading">File Clouding</div>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Desktop app</a></li>
+                        <li><a href="#" class="text-white">Mobile app</a></li>
+                        <li><a href="#" class="text-white">Integrations</a></li>
+                        <li><a href="#" class="text-white">Features</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <div class="footer-heading">Products</div>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Plus</a></li>
+                        <li><a href="#" class="text-white">Professional</a></li>
+                        <li><a href="#" class="text-white">Business</a></li>
+                        <li><a href="#" class="text-white">Enterprise</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <div class="footer-heading">Features</div>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Send large files</a></li>
+                        <li><a href="#" class="text-white">Send long videos</a></li>
+                        <li><a href="#" class="text-white">Cloud photo storage</a></li>
+                        <li><a href="#" class="text-white">Secure file transfer</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <div class="footer-heading">Support</div>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Help center</a></li>
+                        <li><a href="#" class="text-white">Contact us</a></li>
+                        <li><a href="#" class="text-white">Privacy & terms</a></li>
+                        <li><a href="#" class="text-white">Cookie policy</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <div class="footer-heading">Resources</div>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Blog</a></li>
+                        <li><a href="#" class="text-white">Customer stories</a></li>
+                        <li><a href="#" class="text-white">Resources library</a></li>
+                        <li><a href="#" class="text-white">Developers</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <div class="footer-heading">Company</div>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">About us</a></li>
+                        <li><a href="#" class="text-white">Jobs</a></li>
+                        <li><a href="#" class="text-white">Investor relations</a></li>
+                        <li><a href="#" class="text-white">Our impact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+</body>
+</html>

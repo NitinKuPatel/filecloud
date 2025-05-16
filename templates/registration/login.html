@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends 'userapp/base.html' %}
+
+{% block body_block%}
+<style>
+    body {
+        background-image: url('/static/images/star.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    #form1{
+        margin-bottom:40px;
+    }
+</style>
+<div id="form1">
+<h1>Welcome to our website</h1>
+
+<form  method="post">
+    {{form.as_p}}
+    {% csrf_token %}
+    <button
+    type="submit"
+    class="btn btn-success btn-lg"
+>
+    Login
+</button>
+    <a href="{% url 'register' %}" class="btn btn-primary btn-lg">Register</a>
+    <a href="{% url 'password_reset' %}" class="btn btn-warning btn-lg">Forgot Password</a>
+</form>
+
+</div>
+{% endblock %}

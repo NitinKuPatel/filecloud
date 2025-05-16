@@ -1,0 +1,14 @@
+{% extends 'userapp/base.html' %}
+{% load static %}
+
+{% block body_block %}
+    <div id="container1" class="container " style="margin-top: 200px; margin-left:%;">
+        <h2>Confirm Deletion</h2>
+        <p>Are you sure you want to delete the image "{{ image_name }}"?</p>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" name="confirm_delete" class="btn btn-danger">Delete</button>
+            <a href="{% url 'userfiles' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+{% endblock %}
